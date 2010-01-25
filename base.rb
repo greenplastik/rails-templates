@@ -2,7 +2,9 @@
 rspec = false
 formtastic = false
 vestal_versions = false
-utility = false
+markup = false
+will_paginate = false
+language = false
 
 # ASK ALL OF THE QUESTIONS UP FRONT
 # Ask user about RSpec
@@ -21,8 +23,18 @@ if yes?("Do you want to use Vestal Versions for model versioning?")
 end
 
 # Ask user about Bluecloth and Markaby
-if yes?("Do you want to install utility gems (Bluecloth, Markaby, etc.)?")
-  utility = true
+if yes?("Do you want to install markup gems (Bluecloth and Markaby)?")
+  markup = true
+end
+
+# Ask user about will_paginate
+if yes?("Do you want to install pagination gem (will_paginate)?")
+  will_paginate = true
+end
+
+# Ask user about Bluecloth and Markaby
+if yes?("Do you want to install language manipulation gems (Linguistics and Chronic)?")
+  language = true
 end
 
 # ADD SELECTED GEMS
@@ -44,12 +56,20 @@ if vestal_versions
   gem "vestal_versions", :source => "http://gemcutter.org"
 end
 
-#Add utility gems if selected
-if utility
+# Add markup gems if selected
+if markup
   gem "bluecloth", :source => "http://gemcutter.org"
   gem "markaby", :source => "http://gemcutter.org"
-  gem "linguistics", :source => "http://gemcutter.org"
+end
+
+# Add pagination if selected
+if will_paginate
   gem "will_paginate", :source => "http://gemcutter.org"
+end
+
+# Add language manipulation gems
+if language
+  gem "linguistics", :source => "http://gemcutter.org"
   gem "chronic", :source => "http://gemcutter.org"
 end
 
