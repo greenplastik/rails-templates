@@ -66,7 +66,6 @@ end
 if cancan
   gem "cancan", :source => "http://gemcutter.org"
   file 'app/models/ability.rb', 
-
   "class Ability
   include CanCan::Ability
 
@@ -87,7 +86,6 @@ end"
 
 # Add role field to user account (creates current UTC timestamp for migration file name)
 file "db/migrate/#{ Time.utc(*(Time.now).to_a).strftime("%Y%m%d%H%M%S")}_add_role_to_#{name.tableize}.rb",
-
 "class AddRoleTo#{name.tableize.titleize} < ActiveRecord::Migration
 def self.up
   add_column :#{name.tableize}, :role, :string, :default => 'user', :null => false
