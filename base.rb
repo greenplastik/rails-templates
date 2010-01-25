@@ -113,13 +113,13 @@ run "rm public/images/rails.png"
 run %{find . -type d -empty | grep -v "vendor" | grep -v ".git" | grep -v "tmp" | xargs -I xxx touch xxx/.gitignore}
 file '.gitignore',
 %q{log/*.log
-  log/*.pid
-  db/*.db
-  db/*.sqlite3
-  db/schema.rb
-  tmp/**/*
-  .DS_Store
-  config/database.yml}
+log/*.pid
+db/*.db
+db/*.sqlite3
+db/schema.rb
+tmp/**/*
+.DS_Store
+config/database.yml}
 
 # Add files to git repository
 git :add => "."
