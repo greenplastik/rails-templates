@@ -1,7 +1,6 @@
 require 'date'
 # Load base template
-# load_template "http://github.com/greenplastik/rails-templates/raw/master/base.rb"
-load_template "/Users/anmueller/code/rails-templates/base.rb"
+load_template "http://github.com/greenplastik/rails-templates/raw/master/base.rb"
 
 # Initialize variables as false
 name = ''
