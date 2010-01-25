@@ -110,7 +110,6 @@ run "rm public/robots.txt"
 run "rm public/images/rails.png"
 
 # Configure .gitignore files
-run %{find . -type d -empty | grep -v "vendor" | grep -v ".git" | grep -v "tmp" | xargs -I xxx touch xxx/.gitignore}
 file '.gitignore',
 %q{log/*.log
 log/*.pid
@@ -120,6 +119,7 @@ db/schema.rb
 tmp/**/*
 .DS_Store
 config/database.yml}
+run %{find . -type d -empty | grep -v "vendor" | grep -v ".git" | grep -v "tmp" | xargs -I xxx touch xxx/.gitignore}
 
 # Add files to git repository
 git :add => "."
