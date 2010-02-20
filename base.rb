@@ -114,8 +114,6 @@ file '.gitignore',
 %q{log/*.log
 log/*.pid
 db/*.db
-db/*.sqlite3
-db/schema.rb
 tmp/**/*
 .DS_Store
 config/database.yml}
